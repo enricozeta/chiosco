@@ -1,0 +1,14 @@
+
+.image{
+  background: url('../assets/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+* {
+  font-family: Raleway /* Replace with your custom font */, sans-serif !important;
+  /* Add !important to overwrite all elements */
+}

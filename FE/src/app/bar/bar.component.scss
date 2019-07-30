@@ -1,0 +1,61 @@
+.bar{
+  min-height: 100vh;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  .icon{
+    height: 40px;
+  }
+
+  .content {
+    padding: 40px 60px;
+  }
+
+  .parent-card{
+    background-color: #efefef91;
+    margin-top: 30px;
+    .title {
+      font-size: 30px !important;
+    }
+  }
+
+  .card-bar {
+    max-width: 100px !important;
+    min-width: 100px !important;
+    font-size: 12px !important;
+    border: 2px
+  }
+
+  .title-card {
+    font-size: 13px !important;
+  }
+
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+  }
+
+  .example-sidenav {
+    text-align: left;
+    align-items: left;
+    min-width: 300px !important;
+  }
+
+  .center {
+    text-align: center;
+  }
+}
+
+.mat-drawer-container{
+  background-color: transparent;
+}
+
+.total{
+  font-size: 20px;
+  color: green;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+app-sidenav { display: flex; }
+mat-drawer-container { flex: 1 1 auto; }

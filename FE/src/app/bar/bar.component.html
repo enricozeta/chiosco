@@ -1,0 +1,97 @@
+<div *ngIf="!loading">
+  <mat-drawer-container style="min-height: 100vh" class="example-container bar">
+    <mat-drawer #sidenav mode="side" class="example-sidenav">
+      <h1 class="center">Ordine</h1>
+      <div *ngIf="orderedDrinks.size">
+        <h3 class="center">Bibite</h3>
+        <ul>
+          <li *ngFor="let item of orderedDrinks | keyvalue">
+            <div>
+              <p>{{item.key.type}} q.ta: {{item.value}} <button mat-icon-button (click)="removeDrink(item.key)">
+                  <mat-icon>remove_circle_outline</mat-icon>
+                </button></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="orderedPanini.size">
+        <h3 class="center">Panini</h3>
+        <ul>
+          <li *ngFor="let item of orderedPanini | keyvalue">
+            <div>
+              <p>{{item.key.type}} q.ta: {{item.value}} <button mat-icon-button (click)="removePanino(item.key)">
+                  <mat-icon>remove_circle_outline</mat-icon>
+                </button></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="orderedExtras.size">
+        <h3 class="center">Extra</h3>
+        <ul>
+          <li *ngFor="let item of orderedExtras | keyvalue">
+            <div>
+              <p>{{item.key.type}} q.ta: {{item.value}} <button mat-icon-button (click)="removeExtra(item.key)">
+                  <mat-icon>remove_circle_outline</mat-icon>
+                </button></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div *ngIf="selectTeam" class="center">
+        <mat-form-field>
+          <mat-label>Seleziona squadra</mat-label>
+          <mat-select class="form-control" id="team" [(value)]="teamSelected" required>
+            <mat-option *ngFor="let team of teams" [value]="team">{{team}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="center">
+        <p><button style="align-items: center" *ngIf="orderedExtras.size || orderedPanini.size || orderedDrinks.size"
+            mat-raised-button color="accent" (click)="saveOrder()">SALVA ORDINE</button></p>
+        <p><button style="align-items: center" *ngIf="orderedExtras.size || orderedPanini.size || orderedDrinks.size"
+            mat-raised-button color="danger" (click)="clearOrder()">CANCELLA</button></p>
+        <hr>
+        <span class="total">TOTALE: {{totalPrice}} €</span>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="content">
+        <mat-card class="parent-card">
+          <mat-card-title class="title">BEVANDE</mat-card-title>
+          <mat-grid-list cols="5" rowHeight="100px">
+            <mat-grid-tile cols="1" rows="1" *ngFor="let drink of drinks">
+              <mat-card class="card-bar" (click)="addDrink(drink)">
+                <mat-card-title class="title-card"> {{drink.type}}</mat-card-title>
+                <mat-card-subtitle>{{drink.price}}€</mat-card-subtitle>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+        <mat-card class="parent-card">
+          <mat-card-title class="title">PANINI</mat-card-title>
+          <mat-grid-list cols="4" rowHeight="100px">
+            <mat-grid-tile cols="1" rows="1" *ngFor="let sandwich of sandwichs">
+              <mat-card class="card-bar" (click)="addPanino(sandwich)">
+                <mat-card-title class="title-card"> {{sandwich.type}}</mat-card-title>
+                <mat-card-subtitle>{{sandwich.price}}€</mat-card-subtitle>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+        <mat-card class="parent-card">
+          <mat-card-title class="title">EXTRA</mat-card-title>
+          <mat-grid-list cols="3" rowHeight="80px">
+            <mat-grid-tile cols="1" rows="1" *ngFor="let extra of extras">
+              <mat-card class="card-bar" (click)="addExtra(extra)">
+                <mat-card-title class="title-card"> {{extra.type}}</mat-card-title>
+                <mat-card-subtitle>{{extra.price}}€</mat-card-subtitle>
+              </mat-card>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
