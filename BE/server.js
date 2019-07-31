@@ -8,21 +8,20 @@ const Console = require('console');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const server = http.createServer(app);
-const io = socketIO(server);
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/chiosco');
 
-const collection_teamPoints = mongoose.get("TeamPoints");
-
-
+// socket
+const server = http.createServer(app);
+const io = socketIO(server);
 io.on("connection", socket => {
   socket.on('update-points', () => {
     io.emit('update-points');
   });
 });
+
 // model
 const Order = require('./api/model/order');
 const TeamPoints = require('./api/model/teamPoints');
