@@ -29,7 +29,7 @@ export class BarComponent implements OnInit {
   totalPrice = 0;
   selectTeam = false;
   loading = false;
-  teams = [];
+  teams = ['TeamA', 'TeamB', 'TeamC'];
   teamSelected: string;
   order = new Order();
   @ViewChild('sidenav', { static: false }) sidenav: MatDrawer;
@@ -58,7 +58,6 @@ export class BarComponent implements OnInit {
   ];
   ngOnInit() {
     this.initIoConnection();
-    this.getTeams();
   }
 
   private initIoConnection(): void {
@@ -162,17 +161,6 @@ export class BarComponent implements OnInit {
     } else {
       this.selectTeam = false;
     }
-  }
-
-  getTeams() {
-    this.loading = true;
-    const url = 'https://cup-manager.herokuapp.com/team/all';
-    this.http.get<any[]>(url).subscribe((teams) => {
-      teams.forEach(item => {
-        this.teams.push(item.name);
-      });
-      this.loading = false;
-    });
   }
 
   clearOrder() {

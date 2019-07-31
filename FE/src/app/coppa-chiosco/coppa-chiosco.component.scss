@@ -14,10 +14,9 @@
   border: 0;
   padding: 0;
 
-  .mat-card{
-    margin: 0px
+  .mat-card {
+    margin: 0px;
   }
-  background-color: #efefefad;
 
   .mat-card-header {
     background-color: #23406b;
@@ -25,7 +24,7 @@
     justify-content: center;
     margin: 0px;
   }
-  .mat-card-title{
+  .mat-card-title {
     font-size: 30px;
     color: white;
     margin-bottom: 0px !important;
@@ -34,6 +33,7 @@
 
 .result {
   .table {
+    background-color: #efefef91;
     text-align: center;
     width: 100%;
     .title {
@@ -41,7 +41,7 @@
       font-size: 20px;
       font-weight: bold;
     }
-    .mat-row{
+    .mat-row {
       height: 60px;
     }
     .item {
@@ -49,5 +49,3 @@
     }
   }
 }
-
-
