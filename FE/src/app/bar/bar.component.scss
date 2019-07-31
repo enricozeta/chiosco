@@ -57,5 +57,13 @@
   margin-bottom: 5px;
 }
 
+.spinner{
+  height: 100px;
+  width: 100px;
+  left: 50%;
+  margin-top: 25%;
+  background-size: 100%;
+}
+
 app-sidenav { display: flex; }
 mat-drawer-container { flex: 1 1 auto; }

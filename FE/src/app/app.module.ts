@@ -15,7 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatGridTile, MatGridList, MatCard, MatCardTitle, MatCardSubtitle, MatCardHeader
   , MatCardContent, MatCardActions, MatDivider, MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenav,
   MatSidenavContent, MatSidenavContainer, MatCheckboxModule, MatRippleModule, MatButton, MatDialogModule,
-  MatSelectModule, MatTableModule } from '@angular/material';
+  MatSelectModule, MatTableModule, MatSpinner } from '@angular/material';
 import { DialogTeamComponent } from './dialog-team/dialog-team.component';
 import { OrderService } from 'core/Order/OrderService';
 import { CoppaChioscoComponent } from './coppa-chiosco/coppa-chiosco.component';
@@ -30,6 +30,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    MatSpinner,
     BarComponent,
     MatGridTile,
     MatGridList,
