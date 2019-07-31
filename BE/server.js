@@ -34,6 +34,7 @@ app.use(parser.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
   next();
 });
 
