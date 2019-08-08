@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Order = mongoose.model('Order');
+const printer = require('./printer');
 
 exports.create = (req, res) => {
   const order = new Order(req.body);
@@ -10,6 +11,7 @@ exports.create = (req, res) => {
       res.sendStatus(err);
     } else {
       res.json(orderCreated);
+      printer.printOrder(orderCreated);
     }
   });
 };

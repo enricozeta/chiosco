@@ -10,6 +10,9 @@ const Item = new Schema({
     },
     price: {
         type: Number,
+    }, 
+    itemType: {
+        type: String,
     },
 });
 

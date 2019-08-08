@@ -11,6 +11,7 @@ export interface Item {
   type: string;
   price: number;
   count: number;
+  itemType: string;
 }
 
 @Component({
@@ -34,27 +35,27 @@ export class BarComponent implements OnInit {
   order = new Order();
   @ViewChild('sidenav', { static: false }) sidenav: MatDrawer;
   drinks: Item[] = [
-    { type: 'H2o FRIZZANTE', price: 1, count: 0},
-    { type: 'H2o NATURALE', price: 1, count: 0 },
-    { type: 'BIRRA BIONDA', price: 1, count: 0 },
-    { type: 'BIRRA ROSSA', price: 1, count: 0 },
-    { type: 'CAFFE', price: 1, count: 0 },
-    { type: 'MOJITO', price: 1, count: 0 },
-    { type: 'COCA COLA', price: 1, count: 0 },
-    { type: 'THE LIMONE', price: 1, count: 0 },
-    { type: 'THE PESCA', price: 1, count: 0 },
-    { type: 'FANTA', price: 1, count: 0 }
+    { type: 'H2o FRIZZANTE', price: 1, count: 0, itemType: 'Drink'},
+    { type: 'H2o NATURALE', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'BIRRA BIONDA', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'BIRRA ROSSA', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'CAFFE', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'MOJITO', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'COCA COLA', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'THE LIMONE', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'THE PESCA', price: 1, count: 0, itemType: 'Drink' },
+    { type: 'FANTA', price: 1, count: 0, itemType: 'Drink' }
   ];
   sandwichs: Item[] = [
-    { type: 'BORIELLO', price: 3.5, count: 0 },
-    { type: 'MARADONA', price: 3.5, count: 0 },
-    { type: 'PELE', price: 3.5, count: 0 },
-    { type: 'VIERI', price: 3.5, count: 0 },
+    { type: 'BORIELLO', price: 3.5, count: 0, itemType: 'Sandwichs' },
+    { type: 'MARADONA', price: 3.5, count: 0, itemType: 'Sandwichs' },
+    { type: 'PELE', price: 3.5, count: 0, itemType: 'Sandwichs' },
+    { type: 'VIERI', price: 3.5, count: 0, itemType: 'Sandwichs' },
   ];
   extras: Item[] = [
-    { type: 'PATATINE', price: 2.5, count: 0 },
-    { type: 'PIZZETTE', price: 2.5, count: 0 },
-    { type: 'GELATI', price: 2, count: 0 }
+    { type: 'PATATINE', price: 2.5, count: 0, itemType: 'Extra' },
+    { type: 'PIZZETTE', price: 2.5, count: 0, itemType: 'Extra'},
+    { type: 'GELATI', price: 2, count: 0, itemType: 'Extra' }
   ];
   ngOnInit() {
     this.initIoConnection();
@@ -180,6 +181,7 @@ export class BarComponent implements OnInit {
         addItem.type = key.type;
         addItem.price = key.price;
         addItem.count = value;
+        addItem.itemType = key.itemType;
         itemsOrdered.push(addItem);
       });
     }
@@ -189,6 +191,7 @@ export class BarComponent implements OnInit {
         addItem.type = key.type;
         addItem.price = key.price;
         addItem.count = value;
+        addItem.itemType = key.itemType;
         itemsOrdered.push(addItem);
       });
     }
@@ -198,6 +201,7 @@ export class BarComponent implements OnInit {
         addItem.type = key.type;
         addItem.price = key.price;
         addItem.count = value;
+        addItem.itemType = key.itemType;
         itemsOrdered.push(addItem);
       });
     }
