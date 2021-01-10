@@ -12,10 +12,45 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { MatGridTile, MatGridList, MatCard, MatCardTitle, MatCardSubtitle, MatCardHeader
-  , MatCardContent, MatCardActions, MatDivider, MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenav,
-  MatSidenavContent, MatSidenavContainer, MatCheckboxModule, MatRippleModule, MatButton, MatDialogModule,
-  MatSelectModule, MatTableModule, MatSpinner } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+// Material Navigation
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDrawer, MatDrawerContainer, MatSidenav, MatSidenavContent, MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+// Material Layout
+import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardModule, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import { MatDivider, MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridList, MatGridListModule, MatGridTile } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTreeModule } from '@angular/material/tree';
+// Material Buttons & Indicators
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRippleModule } from '@angular/material/core';
+// Material Popups & Modals
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+// Material Data tables
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { DialogTeamComponent } from './dialog-team/dialog-team.component';
 import { OrderService } from 'core/Order/OrderService';
 import { CoppaChioscoComponent } from './coppa-chiosco/coppa-chiosco.component';
@@ -43,10 +78,8 @@ const appRoutes: Routes = [
     MatDivider,
     MatDrawer,
     MatDrawerContainer,
-    MatDrawerContent,
     MatSidenav,
     MatSidenavContent,
-    MatSidenavContainer,
     MatButton,
     DialogTeamComponent,
     CoppaChioscoComponent

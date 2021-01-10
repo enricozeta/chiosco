@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FE"
+    }
+  },
+  "defaultProject": "FE",
+  "cli": {
+    "analytics": false
+  }
 }

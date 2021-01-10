@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Order } from 'core/Order/Order';
-import { MatDrawer } from '@angular/material';
+import { MatDrawer } from '@angular/material/sidenav';
 import { HttpClient } from '@angular/common/http';
 import { Team } from 'core/Team/Team';
 import { Items } from 'core/Order/Item';
